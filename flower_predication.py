@@ -100,10 +100,10 @@ def predict(model_path, flower_path):
             x = image.img_to_array(img)
             x = np.expand_dims(x, axis=0)
             pred = model.predict(x)
-            print(pred_gen.filenames[i])
+            # print(pred_gen.filenames[i])
             mywin.result.insert(END,pred_gen.filenames[i] + ",")
             # print(pred)
-            print(pred.argmax())
+            # print(pred.argmax())
             mywin.result.insert(END, flower_dic[pred.argmax()] + "\n")
             wr.writerow([pred_gen.filenames[i], flower_dic[pred.argmax()]])
             # 0 - daisy
